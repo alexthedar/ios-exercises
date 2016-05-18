@@ -20,9 +20,14 @@
     lowNumber = (number < otherNumber) ? number : otherNumber;
 
     
-    while (lowNumber <= highNumber) {
-        [answer appendFormat:@"%ld", (long)lowNumber];
-        lowNumber++;
+//    while (lowNumber <= highNumber) {
+//        [answer appendFormat:@"%ld", (long)lowNumber];
+//        lowNumber++;
+//    }
+    
+    for (NSInteger n = lowNumber; n <= highNumber; n++) {
+        [answer appendFormat:@"%ld", (long)n];
+        
     }
 
     return answer;
