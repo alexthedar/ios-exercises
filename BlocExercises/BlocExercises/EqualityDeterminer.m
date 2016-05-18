@@ -11,35 +11,22 @@
 @implementation EqualityDeterminer
 
 - (BOOL) string:(NSString *)string1 isTheSameAsString:(NSString *)string2 {
-    /* WORK HERE */
-    NSString *answer;
-    if (string1 == string2) {
-        answer = @"YES";
-    } else {
-        answer = @"NO";
-    }
-    return answer;
+    BOOL isTheSameAsString = [string1 isEqualToString:string2];
+
+    return isTheSameAsString;
 }
 
 - (BOOL) number:(NSNumber *)number1 isTheSameAsNumber:(NSNumber *)number2 {
-    NSString *answer;
-    if ([number1 isEqualToNumber:number2]) {
-        answer = @"YES";
-    } else {
-        answer = @"NO";
-    }
-    return answer;
+    BOOL isTheSameAsNumber = [number1 isEqualToNumber:number2];
+    
+    return isTheSameAsNumber;
+
 
 }
 
 - (BOOL) integer:(NSInteger)integer1 isGreaterThan:(NSInteger)integer2 {
-    NSString *answer;
-    if (integer1 > integer2) {
-        answer = @"YES";
-    } else {
-        answer = @"NO";
-    }
-    return answer;
+    BOOL isGreaterThan = (integer1 > integer2);
+    return isGreaterThan;
 }
 
 @end
