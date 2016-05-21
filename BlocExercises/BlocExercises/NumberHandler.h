@@ -10,6 +10,7 @@
 
 @interface NumberHandler : NSObject
 
+
 /**
  Doubles a number.
 
