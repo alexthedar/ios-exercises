@@ -20,7 +20,7 @@
 }
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
-    self.CopyArr = [arrayToCopy mutableCopy];
+    self.cArr = arrayToCopy;
 }
 
 - (void) rememberThisFloatForLater:(CGFloat)floatToRemember {
@@ -34,7 +34,7 @@
 
 - (NSMutableArray *) arrayYouShouldCopy {
 
-    return self.CopyArr;
+    return self.cArr;
 }
 
 - (CGFloat) floatYouShouldRemember {

@@ -11,7 +11,7 @@
 @interface StuffRememberer : NSObject
 
 @property (nonatomic,strong) NSMutableArray *saveArr;
-@property (nonatomic, copy) NSMutableArray *CopyArr;
+@property (nonatomic, copy) NSMutableArray *cArr;
 @property (assign) CGFloat saveFloat;
 
 /*
