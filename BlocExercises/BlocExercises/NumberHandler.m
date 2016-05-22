@@ -22,13 +22,30 @@
 }
 
 - (NSArray *) arrayOfNumbersBetweenNumber:(NSInteger)number andOtherNumber: (NSInteger)otherNumber {
-    /* WORK HERE */
-    return @[];
+    
+    long high = number > otherNumber ? number : otherNumber;
+    long low = number < otherNumber ? number : otherNumber;
+    
+    NSMutableArray *resultArr = [NSMutableArray new];
+    
+    while (high >= low) {
+        
+        [resultArr addObject:[NSNumber numberWithDouble:low]];
+        low++;
+    }
+    
+    return resultArr;
 }
 
 - (NSInteger) lowestNumberInArray:(NSArray *)arrayOfNumbers {
-    /* WORK HERE */
-    return 0;
+    NSMutableArray *numArrAcopy = [arrayOfNumbers mutableCopy];
+    NSSortDescriptor *lowHigh = [[NSSortDescriptor alloc] initWithKey:nil ascending:NO];
+    [numArrAcopy sortUsingDescriptors:@[lowHigh]];
+    
+    NSNumber *lowInArr = [numArrAcopy lastObject];
+    int result = [lowInArr intValue];
+    
+    return result;
 }
 
 @end
