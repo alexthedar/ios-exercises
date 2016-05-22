@@ -8,33 +8,38 @@
 
 #import "StuffRememberer.h"
 
+
+
+
+
 @implementation StuffRememberer
 
 - (void) rememberThisArrayForLater:(NSMutableArray *)arrayToRemember {
-    /* WORK HERE */
+    self.saveArr = arrayToRemember;
+   
 }
 
 - (void) copyThisArrayForLater:(NSMutableArray *)arrayToCopy {
-    /* WORK HERE */
+    self.CopyArr = [arrayToCopy mutableCopy];
 }
 
 - (void) rememberThisFloatForLater:(CGFloat)floatToRemember {
-    /* WORK HERE */
+    self.saveFloat = floatToRemember;
 }
 
 - (NSMutableArray *) arrayYouShouldRemember {
-    /* WORK HERE */
-    return [@[] mutableCopy];
+ 
+    return self.saveArr;
 }
 
 - (NSMutableArray *) arrayYouShouldCopy {
-    /* WORK HERE */
-    return [@[] mutableCopy];
+
+    return self.CopyArr;
 }
 
 - (CGFloat) floatYouShouldRemember {
-    /* WORK HERE */
-    return 0.0f;
+
+    return self.saveFloat;
 }
 
 @end
