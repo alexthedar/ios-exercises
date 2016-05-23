@@ -8,7 +8,7 @@ Strings
 
 func favoriteCheeseStringWithCheese(cheese: String) -> String {
     
-    return "My favorite cheese is " + cheese
+    return "My favorite cheese is \(cheese)"
 }
 
 let fullSentence = favoriteCheeseStringWithCheese("cheddar")
@@ -22,7 +22,8 @@ Arrays & Dictionaries
 
 var numberArray = [1, 2, 3, 4]
 // Add 5 to this array
-// WORK HERE
+numberArray.append(5)
+
 
 var numberDictionary = [1 : "one", 2 : "two", 3 : "three", 4 : "four"]
 numberDictionary[5] = "five"
@@ -37,10 +38,15 @@ Loops
 */
 
 // Use a closed range loop to print 1 - 10, inclusively
-// WORK HERE
+for worf in 1...10 {
+    print(worf)
+}
+
 
 // Use a half-closed range loop to print 1 - 10, inclusively
-// WORK HERE
+for worf in 1..<10 {
+    print(worf)
+}
 
 let worf = [
     "name": "Worf",
@@ -59,8 +65,11 @@ let characters = [worf, picard]
 
 func favoriteDrinksArrayForCharacters(characters:[[String : String]]) -> [String] {
     // return an array of favorite drinks, like ["prune juice", "tea, Earl Grey, hot"]
-    // WORK HERE
-    return []
+    var drinksArray = [String]()
+    for character in characters {
+        drinksArray.append(character["favorite drink"]!)
+    }
+    return drinksArray
 }
 
 let favoriteDrinks = favoriteDrinksArrayForCharacters(characters)
@@ -76,8 +85,12 @@ Optionals
 func emailFromUserDict(userDict : [String : String]) -> String {
     // Return the user's email address from userDict, or return "" if they don't have one
     
-    // WORK HERE
-    return "user@example.com"
+    if let userEmail = userDict["email"]{
+        return userEmail
+    } else {
+        return  ""
+    }
+
 }
 
 
@@ -101,6 +114,11 @@ Functions
 
 let strings = ["milk", "eggs", "bread", "challah"]
 
+func arrayToString(array:[String])->String{
+    return array.joinWithSeparator(";")
+}
+
+
 // WORK HERE - make your function and pass `strings` in
 
 let expectedOutput = "milk;eggs;bread;challah"
@@ -113,5 +131,5 @@ Closures
 
 let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All Berries", "Cookie Crisp"]
 
-// Use a closure to sort this array alphabetically
-// WORK HERE
+// Use a closure to sort this array 
+let sorted = cerealArray.sort()
