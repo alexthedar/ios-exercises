@@ -132,4 +132,7 @@ Closures
 let cerealArray = ["Golden Grahams", "Cheerios", "Trix", "Cap'n Crunch OOPS! All Berries", "Cookie Crisp"]
 
 // Use a closure to sort this array 
-let sorted = cerealArray.sort()
+//let sorted = cerealArray.sort()
+
+let sortedArray = cerealArray.sort( { (c1: String, c2: String) -> Bool in return c1 < c2 } )
+sortedArray
